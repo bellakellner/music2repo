@@ -6,14 +6,14 @@ class UserSerializer(serializers.ModelSerializer):
     model = User
     # The id is automatically created as a primary key by our Django model
     # and we can included it here as well.
-    fields = ('username', 'password')
+    fields = ('id','username', 'password')
 
 class ArtistSerializer(serializers.ModelSerializer):
   class Meta:
     model = Artist
     # The id is automatically created as a primary key by our Django model
     # and we can included it here as well.
-    fields = ('artist', 'song')
+    fields = ('id','artist', 'song')
 
 class RatingSerializer(serializers.ModelSerializer):
   class Meta:

@@ -8,7 +8,7 @@ class UserAdmin(admin.ModelAdmin):
     list_display = ('username','password')
 
 class ArtistAdmin(admin.ModelAdmin):
-    list_display = ('artist','song')
+    list_display = ('id','artist','song')
 
 class RatingAdmin(admin.ModelAdmin):
     list_display = ('id','username','song','rating')
