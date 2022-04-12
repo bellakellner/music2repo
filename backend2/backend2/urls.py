@@ -22,7 +22,7 @@ router = routers.DefaultRouter()
 router.register(r'Users', views.UserView, 'user')
 router.register(r'Artists', views.ArtistView, 'artist')
 router.register(r'Ratings', views.RatingView, 'rating')
-router.register(r'Songs', views.SongView, 'song')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
