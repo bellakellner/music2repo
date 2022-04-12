@@ -108,9 +108,9 @@ class App extends React.Component {
   handleUser = (item) => {
     this.usertoggle();
 
-    if (item.username) {
+    if (item.id) {
       axios
-        .put(`http://localhost:8000/api/Users/${item.username}/`, item)
+        .put(`http://localhost:8000/api/Users/${item.id}/`, item)
         .then((res) => this.refreshList());
       return;
     }
@@ -123,9 +123,9 @@ class App extends React.Component {
     this.ratingtoggle();
     // If the item already exists in our database, i.e., we have an id for our
     // item, use a PUT request to modify it.
-    if (item.username) {
+    if (item.id) {
       axios
-        .put(`http://localhost:8000/api/Ratings/${item.username}/`, item)
+        .put(`http://localhost:8000/api/Ratings/${item.id}/`, item)
         .then((res) => this.refreshList());
       return;
     }
@@ -157,9 +157,7 @@ class App extends React.Component {
   editItem = (item) => {
     this.setState({ songItem: item, modal: !this.state.modal });
   };
-  rateItem = item => {
-    this.setState({ songItem: item, ratingModal: !this.state.ratingModal });
-  };
+
 
   render() {
     return (
@@ -199,6 +197,7 @@ class App extends React.Component {
             onSave={this.handleSubmit}
           />
         ) : null}
+    
         {this.state.ratingModal ? (
           <RatingModal
 
